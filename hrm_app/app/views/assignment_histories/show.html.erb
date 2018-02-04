@@ -1,0 +1,15 @@
+<% provide(:title, @member.lastname) %>
+<div class="container">
+ <table class="table table-striped">
+    <tbody>
+      <tr>
+        <th scope="row">配属履歴</th>
+          <td><%= @assignment_history.assignment %></td>
+      </tr>
+      <tr>
+        <th scope="row">配属年月日</th>
+          <td><%= @assignment_history.start_date %></td>
+      </tr>
+    </tbody>
+  </table>
+</div>

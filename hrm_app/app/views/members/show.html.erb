@@ -1,0 +1,48 @@
+<% provide(:title, @member.lastname) %>
+      <div class="container">
+      <table class="table table-striped">
+    <tbody>
+      <tr>
+        <th scope="row">名字</th>
+          <td><%= @member.lastname %></td>
+          <td><%= @member.lastname_kana %></td>
+      </tr>
+      <tr>
+        <th scope="row">名前</th>
+          <td><%= @member.firstname %></td>
+          <td><%= @member.firstname_kana %></td>
+      </tr>
+      <tr>
+        <th scope="row">生年月日</th>
+          <td><%= @member.birthday %></td>
+      </tr>
+      <tr>
+        <th scope="row">入社日</th>
+          <td><%= @member.hire_date %></td>
+      </tr>
+      <tr>
+        <th scope="row">性別</th>
+          <td><%= @member.sex %></td>
+      </tr>
+      <tr>
+        <th scope="row">配属先</th>
+          <td><%= @member.assignment %></td>
+      </tr>
+      <th scope="row">社員属性</th>
+          <td><%= @member.employee_attributes %></td>
+      </tr>
+      <th scope="row">役職</th>
+          <td><%= @member.position %></td>
+      </tr>
+      <th scope="row">グレード</th>
+          <td><%= @member.grade %></td>
+      </tr>
+      <th scope="row">在籍年数</th>
+          <td><%= @member.years_of_attendance %></td>
+      </tr>
+      <th scope="row">性格判断</th>
+          <td><%= @member.character_judgment %></td>
+      </tr>
+    </tbody>
+  </table>
+</div>

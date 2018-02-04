@@ -1,0 +1,27 @@
+<% provide(:title, @member.lastname) %>
+      <div class="container">
+      <table class="table table-striped">
+    <tbody>
+      <tr>
+        <th scope="row">計画力</th>
+          <td><%= @score.plan %></td>
+      </tr>
+      <tr>
+        <th scope="row">デザイン力</th>
+          <td><%= @score.design %></td>
+      </tr>
+      <tr>
+        <th scope="row">事務力</th>
+          <td><%= @score.clerk %></td>
+      </tr>
+      <tr>
+        <th scope="row">総合得点</th>
+          <td><%= @score.total_score %></td>
+      </tr>
+      <tr>
+        <th scope="row">判定結果</th>
+          <td><%= @score.judgment %></td>
+      </tr>
+    </tbody>
+  </table>
+</div>

@@ -1,0 +1,33 @@
+ja:
+  activerecord:
+    models:
+      member: 社員
+      family: 家族
+      user: ユーザ
+    attributes:
+      member:
+        sex: 性別
+        position: 役職
+    
+  enumerize:
+    member:
+      sex:
+        unknown: 不明
+        man: 男性
+        woman: 女性
+      assignment:
+        human_resources_department: 人事部
+        finance_department: 財務部
+        business_department: 営業部
+      employee_attributes:
+        comprehensive_work: 総合職
+        general_staff: 一般職
+        officer: 役員
+      position:
+        employee: 社員
+        sectionhief: 係長
+        manager: 課長
+      grade: 
+        s1: S1
+        s2: S2
+        s3: S3

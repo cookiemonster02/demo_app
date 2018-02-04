@@ -1,0 +1,15 @@
+<% provide(:title, @member.lastname) %>
+      <div class="container">
+      <table class="table table-striped">
+    <tbody>
+      <tr>
+        <th scope="row">出勤時刻</th>
+          <td><%= @time_record.start_time %></td>
+      </tr>
+      <tr>
+        <th scope="row">退勤時刻</th>
+          <td><%= @time_record.leaving_time %></td>
+      </tr>
+    </tbody>
+  </table>
+</div>

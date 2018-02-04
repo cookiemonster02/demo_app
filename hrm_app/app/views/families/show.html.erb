@@ -1,0 +1,33 @@
+<% provide(:title, @member.lastname) %>
+      <div class="container">
+      <table class="table table-striped">
+    <tbody>
+      <tr>
+        <th scope="row">続柄</th>
+          <td><%= @family.relationship %></td>
+      </tr>
+      <tr>
+        <th scope="row">名字</th>
+          <td><%= @family.firstname %></td>
+          <td><%= @family.firstname_kana %></td>
+      </tr>
+      <tr>
+        <th scope="row">名前</th>
+          <td><%= @family.lastname %></td>
+          <td><%= @family.lastname_kana %></td>
+      </tr>
+      <tr>
+        <th scope="row">生年月日</th></th>
+          <td><%= @family.birthday %></td>
+      </tr>
+      <tr>
+        <th scope="row">連絡先</th>
+          <td><%= @family.contact_information %></td>
+      </tr>
+      <tr>
+        <th scope="row">住所</th>
+          <td><%= @family.address %></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
