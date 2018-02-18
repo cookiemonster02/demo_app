@@ -1,15 +1,24 @@
 <% provide(:title, 'Members Seach') %>
 <h1>Members Seach</h1>
-<form class="form-inline">
-  <div class="form-group">
-    <label>ID</label>
-    <input type="number" class="form-control" placeholder="ID">
-  </div>
-  <div class="form-group">
-    <label>名前</label>
-    <input type="text" class="form-control" placeholder="LastName">
-  </div>
-  <button type="submit" class="btn btn-default">検索</button>
-</form>
+<p>member search</p>
+<%= form_tag(members_path, method: :get) do %>
+  <%= text_field_tag :keyword, @search_params[:keyword] %>
+  <%= submit_tag 'Search' %>
+<% end %>
+<h1>Listing members</h1>
+<tbody>
+    <% @members.each do |member| %>
+    <li>
+    <%= link_to member.lastname+" "+member.firstname, member %>
+      <tr>
+        <td>&nbsp;&nbsp</td>
+        <td><%= link_to 'Edit', edit_member_path(member) %></td>
+        <td>&nbsp;&nbsp</td>
+        <td><%= link_to 'Destroy', member, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    </li>
+    <% end %>
+  </tbody>
+<br>
 
-
+<%= link_to 'New member', new_member_path %>

@@ -7,20 +7,20 @@ namespace :db do
 end
 
     def make_user
-     User.create!(name: "Example User",
-                  email: "example@railstutorial.org",
+     User.create!(name: "takei kenta",
+                  email: "takei@kenta.jp",
                   password: "foobar")
     end
-    
+
     def make_member
-     50.times do |n|
+      2.times do |n|
        require 'active_support/core_ext/date/calculations'
        d = Date.today
        lastname = Faker::Name.name
        lastname_kana = Faker::Name.name
        firstname = Faker::Name.name
        firstname_kana = Faker::Name.name
-       
+
        Member.create!(lastname: lastname,
         lastname_kana: lastname_kana,
         firstname: firstname,
@@ -32,7 +32,13 @@ end
         employee_attributes: [*0..2].sample,
         position: [*0..2].sample,
         grade: [*0..2].sample,
-        years_of_attendance: [*0..10].sample,
+        years_of_attendance: nil,
         character_judgment: [*0..14].sample)
      end
+
+
+
+
+
+
     end

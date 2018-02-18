@@ -11,25 +11,27 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180113210619) do
+ActiveRecord::Schema.define(version: 20180205220124) do
 
-  create_table "assignment_histories", force: true do |t|
-    t.integer "assignment", null: false
-    t.integer "start_date", null: false
+  create_table "assignment_histories", force: :cascade do |t|
+    t.integer "assignment"
+    t.date    "start_date"
+    t.integer "member_id"
   end
 
-  create_table "families", force: true do |t|
-    t.date    "bithday",             null: false
+  create_table "families", force: :cascade do |t|
+    t.date    "birthday",            null: false
     t.string  "last_name",           null: false
     t.string  "lastname_kana",       null: false
     t.string  "first_name",          null: false
     t.string  "firstname_kana",      null: false
-    t.integer "contact_information", null: false
+    t.string  "contact_information", null: false
     t.string  "address",             null: false
     t.string  "relationship",        null: false
+    t.integer "member_id"
   end
 
-  create_table "members", force: true do |t|
+  create_table "members", force: :cascade do |t|
     t.string   "lastname",            null: false
     t.string   "lastname_kana",       null: false
     t.string   "firstname",           null: false
@@ -41,26 +43,28 @@ ActiveRecord::Schema.define(version: 20180113210619) do
     t.integer  "employee_attributes", null: false
     t.integer  "position",            null: false
     t.integer  "grade",               null: false
-    t.integer  "years_of_attendance", null: false
+    t.integer  "years_of_attendance"
     t.integer  "character_judgment",  null: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  create_table "scores", force: true do |t|
+  create_table "scores", force: :cascade do |t|
     t.integer "plan",        null: false
     t.integer "design",      null: false
     t.integer "clerk",       null: false
-    t.integer "total_score", null: false
-    t.string  "Judgment",    null: false
+    t.integer "total_score"
+    t.string  "judgment"
+    t.integer "member_id"
   end
 
-  create_table "time_records", force: true do |t|
+  create_table "time_records", force: :cascade do |t|
     t.integer "start_time",   null: false
     t.integer "leaving_time", null: false
+    t.integer "member_id"
   end
 
-  create_table "users", force: true do |t|
+  create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "",    null: false
     t.string   "encrypted_password",     default: "",    null: false
     t.string   "reset_password_token"

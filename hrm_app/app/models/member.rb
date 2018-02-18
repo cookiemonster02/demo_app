@@ -1,5 +1,10 @@
 class Member < ActiveRecord::Base
-  extend Enumerize
+extend Enumerize
+
+  has_many :families, dependent: :destroy, autosave: true
+  has_one  :score, dependent: :destroy, autosave: true
+  has_many :assignment_histories, dependent: :destroy, autosave: true
+  has_many :time_records, dependent: :destroy, autosave: true
 
   enumerize :sex, in: {unknown: 0, man: 1, woman: 2} ,scope: true
   enumerize :assignment, in: {human_resources_department: 0, finance_department: 1, business_department: 2} ,scope: true
@@ -19,6 +24,13 @@ class Member < ActiveRecord::Base
   validates :employee_attributes, presence: true,numericality: true
   validates :position, presence: true,numericality: true
   validates :grade, presence: true,numericality: true
-  validates :years_of_attendance, absence: true
   validates :character_judgment, presence: true,numericality: true
+
+  def self.search(search) #ここでのself.はUser.を意味する
+    if search
+      where(['sex LIKE ?', "%#{search}%"]) #検索とnameの部分一致を表示。User.は省略
+    else
+      all #全て表示。User.は省略
+    end
+  end
 end
